@@ -112,19 +112,6 @@ describe "wordpress: #{uri}/ - ", :type => :request, :js => true do
       click_button 'wp-submit'
       
       expect(page).to have_selector("input[name='o10n[pwa.enabled]']")
-    
-      within("#poststuff") do 
-
-        # enable cloudfront page cache
-        find("input[name='o10n[pwa.enabled]']").set(true)
-
-        find("input[name='o10n[pwa.register]']").set(true)
-
-      end
-      
-      click_button 'is_submit', match: :first
-
-      expect(page).to have_content("Settings saved.")
 
     end
 
