@@ -98,10 +98,10 @@ describe "wordpress: #{uri}/ - ", :type => :request, :js => true do
     end
   end
 
-  describe "css-optimization-settings" do
+  describe "pwa-optimization-settings" do
 
     before do
-      visit "#{uri}/wp-admin/themes.php?page=o10n-css&tab=optimization"
+      visit "#{uri}/wp-admin/themes.php?page=o10n-pwa&tab=optimization"
     end
 
     it "Logged in to WordPress Dashboard" do
@@ -111,20 +111,14 @@ describe "wordpress: #{uri}/ - ", :type => :request, :js => true do
       end
       click_button 'wp-submit'
       
-      expect(page).to have_selector("input[name='o10n[css.minify.enabled]']")
+      expect(page).to have_selector("input[name='o10n[pwa.enabled]']")
     
       within("#poststuff") do 
 
         # enable cloudfront page cache
-        find("input[name='o10n[css.minify.enabled]']").set(true)
+        find("input[name='o10n[pwa.enabled]']").set(true)
 
-        find("input[name='o10n[css.minify.concat.enabled]']").set(true)
-        find("input[name='o10n[css.minify.concat.minify]']").set(true)
-
-        find("input[name='o10n[css.minify.concat.mediaqueries.enabled]']").set(true)
-        find("input[name='o10n[css.minify.concat.inline.enabled]']").set(true)
-
-        find(".advanced-toggle-all").click;
+        find("input[name='o10n[pwa.register]']").set(true)
 
       end
       
