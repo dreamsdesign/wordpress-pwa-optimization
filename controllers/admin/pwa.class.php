@@ -59,6 +59,9 @@ class AdminPwa extends ModuleAdminController implements Module_Admin_Controller_
 
         // admin options page
         add_action('admin_menu', array($this, 'admin_menu'), 50);
+
+        // upgrade/install hooks
+        $this->upgrade();
     }
     
     /**
@@ -154,5 +157,37 @@ class AdminPwa extends ModuleAdminController implements Module_Admin_Controller_
             $('.plugin-title strong',r).html('<?php print $this->core->modules('pwa')->name(); ?><a href="https://optimization.team" class="g100" style="font-size: 10px;float: right;font-weight: normal;opacity: .2;line-height: 14px;">O10N</span>');
             var d=$('.plugin-description',r).html();$('.plugin-description',r).html(d.replace('Google PageSpeed','<a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank">Google PageSpeed</a>').replace('Google Lighthouse','<a href="https://developers.google.com/web/tools/lighthouse/" target="_blank">Google Lighthouse</a>').replace('ThinkWithGoogle.com','<a href="https://testmysite.thinkwithgoogle.com/" target="_blank">ThinkWithGoogle.com</a>').replace('Excellent','<span style="font-style:italic;color:#079c2d;">Excellent</span>'));
 });</script><?php
+    }
+    
+    /**
+     * Upgrade plugin
+     */
+    final public function upgrade()
+    {
+        $version = $this->core->modules('pwa')->version();
+
+        if (version_compare($version, '0.0.39', '<=')) {
+            $admin_path = trailingslashit(ABSPATH) . 'wp-admin/';
+            $sw_filename = 'o10n-sw.js';
+            $sw_filename_debug = 'o10n-sw.debug.js';
+            $sw_worker_filename = 'o10n-sw-worker.js';
+            $sw_worker_filename_debug = 'o10n-sw-worker.debug.js';
+            $sw_hash_filename = 'o10n-sw-hash.txt';
+            $sw_hash_filename_debug = 'o10n-sw-hash.debug.txt';
+
+            // remove Service Worker files from wp-admin/ directory
+            $sw_files = array(
+                $admin_path . $sw_filename,
+                $admin_path . $sw_worker_filename,
+                $admin_path . $sw_filename_debug,
+                $admin_path . $sw_worker_filename_debug,
+                $admin_path . $sw_hash_filename
+            );
+            foreach ($sw_files as $file) {
+                if (file_exists($file)) {
+                    @unlink($file);
+                }
+            }
+        }
     }
 }

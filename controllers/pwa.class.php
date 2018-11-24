@@ -34,7 +34,7 @@ class Pwa extends Controller implements Controller_Interface
     private $sw_hash_filename = 'o10n-sw-hash.txt';
     private $sw_hash_filename_debug = 'o10n-sw-hash.debug.txt';
 
-    private $sw_path; // root path of service worker
+    private $sw_path = null; // root path of service worker
     private $sw_url_path; // root URL path of service worker
     private $sw_scope; // service worker scope
     private $sw_hash; // service worker source file hash
@@ -74,6 +74,7 @@ class Pwa extends Controller implements Controller_Interface
 
         // setup on WordPress init hook
         add_action('init', array($this, 'init_setup'), PHP_INT_MAX);
+        add_action('admin_init', array($this, 'init_setup'), PHP_INT_MAX);
     }
 
     /**
@@ -105,6 +106,7 @@ class Pwa extends Controller implements Controller_Interface
         if ($this->sw_path !== $path) {
             $this->sw_path = $this->file->trailingslashit($this->sw_path);
         }
+
 
         // URL path of service worker files
         $url_path = $this->file->trailingslashit(parse_url(site_url(), PHP_URL_PATH));
@@ -191,6 +193,11 @@ class Pwa extends Controller implements Controller_Interface
      */
     final public function send_headers()
     {
+        // disabled
+        if (!$this->env->enabled('pwa')) {
+            return;
+        }
+        
         if (headers_sent()) {
             return;
         }
@@ -492,6 +499,10 @@ class Pwa extends Controller implements Controller_Interface
 
         // options controller
         $options = ($forminput) ? $forminput : $this->options;
+
+        if (is_null($this->sw_path)) {
+            return;
+        }
 
         // PWA disabled, remove service worker
         if (!$options->bool('pwa.enabled')) {
