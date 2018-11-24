@@ -150,23 +150,23 @@ describe "wordpress: #{uri}/ - ", :type => :request, :js => true do
       end
       click_button 'wp-submit'
    
-      expect(page).to have_content(/CSS Optimization/i)
+      expect(page).to have_content(/PWA Optimization/i)
 
       # deactivate
-      find("tr[data-slug='css-optimization']").find('td.column-primary').find(".deactivate", match: :first).find("a").click
+      find("tr[data-slug='pwa-optimization']").find('td.column-primary').find(".deactivate", match: :first).find("a").click
 
       expect(page).to have_content("Plugin deactivated.")
 
       # delete
       accept_confirm do
-        find("tr[data-slug='css-optimization']").find('td.column-primary').find("a.delete").click
+        find("tr[data-slug='pwa-optimization']").find('td.column-primary').find("a.delete").click
       end
   
       expect(page).to have_content("was successfully deleted.");
 
       visit "#{uri}/wp-admin/plugin-install.php?tab=upload"
  
-      attach_file('pluginzip', File.absolute_path('/tmp/wordpress/wp-content/plugins/wordpress-css-optimization.zip'))
+      attach_file('pluginzip', File.absolute_path('/tmp/wordpress/wp-content/plugins/wordpress-pwa-optimization.zip'))
 
       click_button 'install-plugin-submit', match: :first
 
