@@ -98,10 +98,10 @@ describe "wordpress: #{uri}/ - ", :type => :request, :js => true do
     end
   end
 
-  describe "pwa-optimization-settings" do
+  describe "pwa-serviceworker-settings" do
 
     before do
-      visit "#{uri}/wp-admin/themes.php?page=o10n-pwa&tab=serviceworker"
+      visit "#{uri}/wp-admin/tools.php?page=o10n-pwa&tab=serviceworker"
     end
 
     it "Logged in to WordPress Dashboard" do
