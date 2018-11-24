@@ -101,7 +101,7 @@ describe "wordpress: #{uri}/ - ", :type => :request, :js => true do
   describe "pwa-optimization-settings" do
 
     before do
-      visit "#{uri}/wp-admin/themes.php?page=o10n-pwa&tab=optimization"
+      visit "#{uri}/wp-admin/themes.php?page=o10n-pwa&tab=serviceworker"
     end
 
     it "Logged in to WordPress Dashboard" do
