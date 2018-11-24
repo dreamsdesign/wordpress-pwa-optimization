@@ -164,9 +164,12 @@ class AdminPwa extends ModuleAdminController implements Module_Admin_Controller_
      */
     final public function upgrade()
     {
+
+        // set current version
+        $current_version = get_option('o10n_pwa_version', false);
         $version = $this->core->modules('pwa')->version();
 
-        if (version_compare($version, '0.0.39', '<=')) {
+        if ($current_version === false || version_compare($current_version, '0.0.39', '<=')) {
             $admin_path = trailingslashit(ABSPATH) . 'wp-admin/';
             $sw_filename = 'o10n-sw.js';
             $sw_filename_debug = 'o10n-sw.debug.js';
@@ -188,6 +191,8 @@ class AdminPwa extends ModuleAdminController implements Module_Admin_Controller_
                     @unlink($file);
                 }
             }
+
+            update_option('o10n_pwa_version', $version, false);
         }
     }
 }
