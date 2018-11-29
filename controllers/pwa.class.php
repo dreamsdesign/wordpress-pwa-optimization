@@ -101,18 +101,18 @@ class Pwa extends Controller implements Controller_Interface
         $this->sw_worker_filename = apply_filters('o10n_sw_worker_filename', $this->sw_worker_filename);
 
         // file path
-        $path = $this->file->trailingslashit(ABSPATH);
+        $path = trailingslashit(ABSPATH);
         $this->sw_path = apply_filters('o10n_sw_path', $path);
         if ($this->sw_path !== $path) {
-            $this->sw_path = $this->file->trailingslashit($this->sw_path);
+            $this->sw_path = trailingslashit($this->sw_path);
         }
 
 
         // URL path of service worker files
-        $url_path = $this->file->trailingslashit(parse_url(site_url(), PHP_URL_PATH));
+        $url_path = trailingslashit(parse_url(site_url(), PHP_URL_PATH));
         $this->sw_url_path = apply_filters('o10n_sw_url_path', $url_path);
         if ($this->sw_url_path !== $url_path) {
-            $this->sw_url_path = $this->file->trailingslashit($this->sw_url_path);
+            $this->sw_url_path = trailingslashit($this->sw_url_path);
         }
 
         // service worker scope
