@@ -104,6 +104,8 @@ If the CEO communicated, he could have been forgiven. He has left me in the dark
 ...
 ![psp](https://user-images.githubusercontent.com/8843669/50249383-2c28b880-03de-11e9-9595-ce6e2eeb6451.png)
 
+---
+
 **Note:** at the moment of the above writing the CEO had apparently disappeared for 2 months and stopped communicating, despite pending new promises to deliver results from his side (after consciously holding on to his CEO position when asked if he wanted to leave). Only after reading his inbox and contacting one of his personal investment partners communication was restored.
 
 My question in regards to the company had remained pending for months.
@@ -147,6 +149,8 @@ The CEO started to communicate that he wanted to give up and proposed to close t
 > An answer to these questions is important. You held on to your CEO role a few months ago and have kept the company waiting for almost a year. There are great losses, not just for the company but also to it's many beneficiaries. I noticed that the lawyer also expects to receive $10k. How is PSP going to pay that?
 > 
 > It is simply not righteous to now walk away as if a 9 out of 10 startup failed.
+
+---
 
 </details>
 
