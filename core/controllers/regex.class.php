@@ -62,6 +62,7 @@ class Regex extends Controller implements Controller_Interface
             } elseif ($char === ' ' || $char === "\n") {
                 $regex = '#('.$param_quote.'\s*=\s*["|\'])([^"|\']+)(["|\'])#Usmi';
             } else {
+                $last_is_quote = false;
                 $regex = '#('.$param_quote.'\s*=)([^\s>]+)(\s|>|$)#Usmi';
             }
 
@@ -78,7 +79,7 @@ class Regex extends Controller implements Controller_Interface
 
             if ($replace === -1) {
                 // replace param in tag
-                $attributes = preg_replace($regex, '', $attributes_str);
+                $attributes = preg_replace($regex, ((!$last_is_quote) ? '$3' : ''), $attributes_str);
             } else {
                 // replace param in tag
                 $attributes = preg_replace($regex, '$1' . $replace . '$3', $attributes_str);
