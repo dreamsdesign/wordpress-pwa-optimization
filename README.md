@@ -168,7 +168,7 @@ Thanks to the valuable feedback from Github users, the WPO plugins did receive f
 
 ### Demo
 
-The plugins are able to deliver results for SEO. Our www.e-scooter.co demo website (started in 2018) ranks in the top 10 in Google in many countries and received visitors from 211 countries and is now visited from 174 countries per week on average. In The Netherlands, www.e-scooter.nl ranks #1 for many scooters. 
+The plugins are able to deliver results for SEO. Our www.e-scooter.co demo website (started in 2018) ranks in the top 10 in Google in many countries and received visitors from 211 countries and is now visited from 174 countries every week on average. In The Netherlands, www.e-scooter.nl ranks #1 for many scooters. 
 
 **The WPO plugins are operating sublimely.**
 
