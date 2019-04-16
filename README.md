@@ -152,7 +152,7 @@ The CEO started to communicate that he wanted to give up and proposed to close t
 
 The original plan for the **Advanced Optimization** plugin had 3 stages:
 
-1) publication of a high quality Advanced Optimization plugin (Google Lighthouse optimization + beyond)
+1) publication of a high quality optimization plugin (Google Lighthouse optimization + beyond)
 2) make the JSON optimization config popular (it can save a lot of time, easy to get free help (JSON knowledge) on forums, easy for examples in tutorials etc)
 3) use the optimization intelligence data unlocked through the JSON documents to create an AI automation service (API) that can provide the best possible performance result on per-page, per-device and even individual visitor level.
 
