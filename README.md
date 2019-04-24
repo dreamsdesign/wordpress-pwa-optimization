@@ -168,13 +168,11 @@ Thanks to the valuable feedback from Github users, the WPO plugins did receive f
 
 ### Demo
 
-The plugins are able to deliver results for SEO. Our www.e-scooter.co demo website (started in 2018) ranks in the top 10 in Google in many countries and received visitors from 211 countries and is now visited from 174 countries every week on average. In The Netherlands, www.e-scooter.nl ranks #1 for many scooters. 
+The plugins are able to deliver results for SEO. Our www.e-scooter.co demo website (started in 2018) ranks in the top 10 in Google in many countries and received visitors from 211 countries and is now visited from 174 countries every week on average. The demo website ranks #1 for many scooters globally. 
 
 **The WPO plugins are operating sublimely.**
 
-![gogoro-prijs](https://user-images.githubusercontent.com/8843669/48940358-90f40e80-ef17-11e8-8bbb-62c3187d8953.png)
-
-![image](https://user-images.githubusercontent.com/8843669/49431914-c964d980-f7ae-11e8-9a60-f5fb3cfd733d.png)
+![WPO plugins demo](https://github.com/o10n-x/wordpress-o10n-core/blob/master/docs/images/google-rankings-international.png)
 
 It will take a bit more effort, and maybe some more feedback from users, but then the WPO plugins could simply be a great tool for achieving Google Lighthouse 100-scores and even better performance results (speed) than would be required for a 100-score (the plugins provide unique innovations such as timed javascript execution and CSS rendering, advanced Web Worker based preload logic, preload on mouse-down and [Service Worker Push](https://github.com/o10n-x/wordpress-http2-optimization/wiki/HTTP-2-Server-Push-vs-Service-Worker-Push) with better performance than HTTP/2 Server Push).
 
